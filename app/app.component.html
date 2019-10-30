@@ -1,0 +1,20 @@
+<hello name="{{ name }}"></hello>
+<p>
+	Start editing to see some magic happen :)
+</p>
+<button (click)="onClick()">Send Request</button>
+
+<div>
+  <input type="text" [(ngModel)]="term">
+<p>Result:</p>
+ <ul>
+    <li *ngFor="let group of displayItems  | filter: term">
+    {{group.departure.city}}
+    <ul>
+        <li *ngFor="let flight of group.segments">
+        {{flight.flightNumber}}
+        </li>
+    </ul>
+    </li>
+</ul>
+</div>
